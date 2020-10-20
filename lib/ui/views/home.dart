@@ -1,4 +1,5 @@
 import 'package:Todo/ui/reusable/category_card.dart';
+import 'package:Todo/ui/views/work.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -46,16 +47,19 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Icon(
-                              Icons.add,
-                              size: 35,
-                              color: Colors.black,
+                          GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Icon(
+                                Icons.add,
+                                size: 35,
+                                color: Colors.black,
+                              ),
                             ),
                           )
                         ],
@@ -165,11 +169,21 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       width: 10,
                     ),
-                    CategoryCard(
-                      category: 'WORK',
-                      taskCount: '1',
-                      startColor: Color(0xff597CF2),
-                      endColor: Color(0xff7B43F4),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => WorkView(),
+                          ),
+                        );
+                      },
+                      child: CategoryCard(
+                        category: 'WORK',
+                        taskCount: '1',
+                        startColor: Color(0xff597CF2),
+                        endColor: Color(0xff7B43F4),
+                      ),
                     ),
                     SizedBox(
                       width: 10,
