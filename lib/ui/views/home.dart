@@ -1,3 +1,4 @@
+import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/reusable/category_card.dart';
 import 'package:Todo/ui/views/work.dart';
 import 'package:flutter/material.dart';
@@ -15,12 +16,13 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
+                padding: EdgeInsets.symmetric(
+                    horizontal: Config.xMargin(context, 5)),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 15,
+                        height: Config.yMargin(context, 2),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(
-                                height: 5,
+                                height: Config.yMargin(context, 1),
                               ),
                               Text(
                                 'Today',
@@ -50,8 +52,8 @@ class HomeScreen extends StatelessWidget {
                           GestureDetector(
                             onTap: () {},
                             child: Container(
-                              height: 50,
-                              width: 50,
+                              height: Config.yMargin(context, 6),
+                              width: Config.xMargin(context, 11.5),
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(15)),
@@ -158,7 +160,7 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     SizedBox(
-                      width: 20,
+                      width: Config.xMargin(context, 5),
                     ),
                     CategoryCard(
                       category: 'TOTAL',
@@ -203,9 +205,7 @@ class HomeScreen extends StatelessWidget {
                       startColor: Color(0xff8AF7BB),
                       endColor: Color(0xff24E395),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
+                    SizedBox(width: Config.xMargin(context, 5)),
                   ],
                 ),
               ),
@@ -213,7 +213,8 @@ class HomeScreen extends StatelessWidget {
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(
+                    horizontal: Config.xMargin(context, 5)),
                 child: Text(
                   'COMPLETED',
                   style: TextStyle(
