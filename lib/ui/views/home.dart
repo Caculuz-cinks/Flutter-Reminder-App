@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+   
     var widthOfScreen = MediaQuery.of(context).size.width;
     var heightOfScreen = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                                 'Reminders',
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 35,
+                                    fontSize: Config.textSize(context, 8),
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(
@@ -44,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                                 'Today',
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 28,
+                                    fontSize: Config.textSize(context, 6),
                                     decoration: TextDecoration.underline),
                               ),
                             ],
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(15)),
                               child: Icon(
                                 Icons.add,
-                                size: 35,
+                                size: Config.textSize(context, 8),
                                 color: Colors.black,
                               ),
                             ),
@@ -67,21 +68,21 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 30,
+                        height: Config.yMargin(context, 3),
                       ),
                       Text(
                         'UP NEXT',
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: Config.textSize(context, 4.5),
                             color: Colors.white,
                             fontWeight: FontWeight.w700),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: Config.yMargin(context, 2.5),
                       ),
                       Container(
-                        height: 130,
-                        width: widthOfScreen,
+                        height: Config.yMargin(context, 17),
+                        width: double.infinity,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(7),
                           gradient: LinearGradient(
@@ -98,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 10),
+                              horizontal: Config.xMargin(context, 6.94), vertical: 10),
                           child: Row(
                             children: [
                               Text(
