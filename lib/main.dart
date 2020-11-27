@@ -19,16 +19,11 @@ class MyApp extends StatelessWidget {
 class MaterialAPP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        // Provider<Something>(create: (_) => Something()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "RemindMe",
-        routes: RouteNames.routes,
-        onGenerateRoute: RouteGenerator.generateRoute,
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "RemindMe",
+      routes: RouteNames.routes,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

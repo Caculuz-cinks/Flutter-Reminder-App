@@ -1,6 +1,7 @@
 import 'package:Todo/core/routes/route_names.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/reusable/category_card.dart';
+import 'package:Todo/ui/reusable/item_list.dart';
 import 'package:Todo/ui/views/work.dart';
 import 'package:flutter/material.dart';
 
@@ -53,8 +54,8 @@ class HomeScreen extends StatelessWidget {
                           GestureDetector(
                             onTap: () {},
                             child: Container(
-                              height: Config.yMargin(context, 6),
-                              width: Config.xMargin(context, 11.5),
+                              height: Config.yMargin(context, 6.5),
+                              width: Config.xMargin(context, 12),
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(15)),
@@ -80,66 +81,12 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: Config.yMargin(context, 2.5),
                       ),
-                      Container(
-                        height: Config.yMargin(context, 17),
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          gradient: LinearGradient(
-                              end: Alignment.bottomRight,
-                              begin: Alignment.topLeft,
-                              stops: [
-                                0.3,
-                                1.0
-                              ],
-                              colors: [
-                                Color(0xffF4AF8C),
-                                Color(0xffE97C6E),
-                              ]),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: Config.xMargin(context, 6.94),
-                              vertical: 10),
-                          child: Row(
-                            children: [
-                              Text(
-                                '2h',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 40,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Go to the grocery',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'Mall',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
+                      ItemCard(
+                        color1: Color(0xffF4AF8C),
+                        color2: Color(0xffE97C6E),
+                        hours: '2h',
+                        item: 'Go to the grocery',
+                        location: 'Mall',
                       ),
                       SizedBox(
                         height: 30,

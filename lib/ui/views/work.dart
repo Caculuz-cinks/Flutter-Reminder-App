@@ -29,24 +29,66 @@ class WorkView extends StatelessWidget {
               padding:
                   EdgeInsets.symmetric(horizontal: Config.xMargin(context, 5)),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: Config.yMargin(context, 5),
+                    height: Config.yMargin(context, 3),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                      size: Config.textSize(context, 6.5),
+                    ),
+                  ),
+                  SizedBox(
+                    height: Config.yMargin(context, 2.5),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Work',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: Config.textSize(context, 8),
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: Config.yMargin(context, 1),
+                          ),
+                          Text(
+                            'Today',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: Config.textSize(context, 6),
+                                decoration: TextDecoration.underline),
+                          ),
+                        ],
+                      ),
                       GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: Colors.white,
-                          size: Config.textSize(context, 6.5),
+                        onTap: () {},
+                        child: Container(
+                          height: Config.yMargin(context, 6.5),
+                          width: Config.xMargin(context, 12),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Icon(
+                            Icons.add,
+                            size: Config.textSize(context, 8),
+                            color: Colors.black,
+                          ),
                         ),
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
