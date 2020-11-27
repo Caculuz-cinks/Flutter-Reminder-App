@@ -1,3 +1,4 @@
+import 'package:Todo/core/routes/route_names.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/reusable/category_card.dart';
 import 'package:Todo/ui/views/work.dart';
@@ -174,11 +175,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushNamed(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => WorkView(),
-                          ),
+                          RouteNames.work,
                         );
                       },
                       child: CategoryCard(
@@ -228,7 +227,8 @@ class HomeScreen extends StatelessWidget {
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(
+                    horizontal: Config.xMargin(context, 5)),
                 child: Text(
                   '67%',
                   style: TextStyle(
