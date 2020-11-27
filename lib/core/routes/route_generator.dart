@@ -1,6 +1,6 @@
 import 'package:Todo/core/routes/route_names.dart';
 import 'package:Todo/ui/views/home.dart';
-import 'package:Todo/ui/views/work.dart';
+import 'package:Todo/ui/views/category_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
