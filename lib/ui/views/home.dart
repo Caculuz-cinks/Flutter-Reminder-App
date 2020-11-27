@@ -1,8 +1,10 @@
 import 'package:Todo/core/routes/route_names.dart';
+import 'package:Todo/ui/app_colors.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/reusable/category_card.dart';
 import 'package:Todo/ui/reusable/item_card.dart';
-import 'package:Todo/ui/views/work.dart';
+import 'package:Todo/ui/reusable/open_category.dart';
+import 'package:Todo/ui/views/category_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -111,28 +113,16 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       width: Config.xMargin(context, 5),
                     ),
-                    CategoryCard(
+                    OpenCategory(
                       category: 'TOTAL',
                       taskCount: '3',
-                      startColor: Color(0xffFF80CE),
-                      endColor: Color(0xffF7007C),
                     ),
                     SizedBox(
                       width: Config.xMargin(context, 3),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          RouteNames.work,
-                        );
-                      },
-                      child: CategoryCard(
-                        category: 'WORK',
-                        taskCount: '1',
-                        startColor: Color(0xff597CF2),
-                        endColor: Color(0xff7B43F4),
-                      ),
+                    OpenCategory(
+                      category: 'WORK',
+                      taskCount: '9',
                     ),
                     SizedBox(
                       width: Config.xMargin(context, 3),

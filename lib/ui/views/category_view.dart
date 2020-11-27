@@ -1,9 +1,13 @@
+import 'package:Todo/ui/app_colors.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/reusable/item_card.dart';
 import 'package:Todo/ui/reusable/item_card_list.dart';
 import 'package:flutter/material.dart';
 
 class WorkView extends StatelessWidget {
+  WorkView({this.category});
+  final String category;
+
   @override
   Widget build(BuildContext context) {
     var widthOfScreen = MediaQuery.of(context).size.width;
@@ -23,8 +27,16 @@ class WorkView extends StatelessWidget {
                     1.0
                   ],
                   colors: [
-                    Color(0xff597CF2),
-                    Color(0xff7B43F4),
+                    category == 'WORK'
+                        ? AppColors.workStartColor
+                        : category == 'TOTAL'
+                            ? AppColors.totalStartColor
+                            : AppColors.white,
+                    category == 'WORK'
+                        ? AppColors.workEndColor
+                        : category == 'TOTAL'
+                            ? AppColors.totalEndColor
+                            : AppColors.white,
                   ]),
             ),
             child: Padding(
@@ -56,7 +68,7 @@ class WorkView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Work',
+                            category,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: Config.textSize(context, 8),
