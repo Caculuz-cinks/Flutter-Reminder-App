@@ -1,3 +1,4 @@
+import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:flutter/material.dart';
 
 class WorkView extends StatelessWidget {
@@ -25,11 +26,12 @@ class WorkView extends StatelessWidget {
                   ]),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding:
+                  EdgeInsets.symmetric(horizontal: Config.xMargin(context, 5)),
               child: Column(
                 children: [
                   SizedBox(
-                    height: 10,
+                    height: Config.yMargin(context, 5),
                   ),
                   Row(
                     children: [
@@ -40,7 +42,7 @@ class WorkView extends StatelessWidget {
                         child: Icon(
                           Icons.arrow_back,
                           color: Colors.white,
-                          size: 30,
+                          size: Config.textSize(context, 6.5),
                         ),
                       )
                     ],

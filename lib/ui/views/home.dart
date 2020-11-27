@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   
     var widthOfScreen = MediaQuery.of(context).size.width;
     var heightOfScreen = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -99,7 +98,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: Config.xMargin(context, 6.94), vertical: 10),
+                              horizontal: Config.xMargin(context, 6.94),
+                              vertical: 10),
                           child: Row(
                             children: [
                               Text(
@@ -170,7 +170,7 @@ class HomeScreen extends StatelessWidget {
                       endColor: Color(0xffF7007C),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: Config.xMargin(context, 3),
                     ),
                     GestureDetector(
                       onTap: () {
@@ -189,7 +189,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: Config.xMargin(context, 3),
                     ),
                     CategoryCard(
                       category: 'SHOPPING',
@@ -198,7 +198,7 @@ class HomeScreen extends StatelessWidget {
                       endColor: Color(0xffE44788),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: Config.xMargin(context, 3),
                     ),
                     CategoryCard(
                       category: 'PERSONAL',
@@ -211,7 +211,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: Config.yMargin(context, 5),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
