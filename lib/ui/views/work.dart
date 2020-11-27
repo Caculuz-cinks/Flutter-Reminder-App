@@ -1,4 +1,6 @@
 import 'package:Todo/ui/responsiveness/size_config.dart';
+import 'package:Todo/ui/reusable/item_card.dart';
+import 'package:Todo/ui/reusable/item_card_list.dart';
 import 'package:flutter/material.dart';
 
 class WorkView extends StatelessWidget {
@@ -86,9 +88,67 @@ class WorkView extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
+                  SizedBox(
+                    height: Config.yMargin(context, 3),
+                  ),
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              '1h',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                            SizedBox(
+                              width: Config.xMargin(context, 3),
+                            ),
+                            Expanded(
+                              child: ItemCardList(
+                                color1: Color(0xff5C77F2).withRed(110),
+                                color2: Color(0xff8B73F5),
+                                location: 'Sillicon Valley',
+                                item: 'Visit Apple and Google',
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: Config.yMargin(context, 3),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '4h',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                            SizedBox(
+                              width: Config.xMargin(context, 3),
+                            ),
+                            Expanded(
+                              child: ItemCardList(
+                                color1: Color(0xff5C77F2).withRed(110),
+                                color2: Color(0xff8B73F5),
+                                location: 'Sillicon Valley',
+                                item: 'Visit Apple and Google',
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),

@@ -1,7 +1,7 @@
 import 'package:Todo/core/routes/route_names.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/reusable/category_card.dart';
-import 'package:Todo/ui/reusable/item_list.dart';
+import 'package:Todo/ui/reusable/item_card.dart';
 import 'package:Todo/ui/views/work.dart';
 import 'package:flutter/material.dart';
 
