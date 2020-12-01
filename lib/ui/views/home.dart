@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
     var widthOfScreen = MediaQuery.of(context).size.width;
     var heightOfScreen = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xff2C2F35),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -58,7 +59,8 @@ class HomeScreen extends StatelessWidget {
                             onTap: () {
                               showModalBottomSheet(
                                   context: context,
-                                  builder: (BuildContext ontext) {
+                                  isScrollControlled: true,
+                                  builder: (context) {
                                     return AddCategory();
                                   });
                             },
