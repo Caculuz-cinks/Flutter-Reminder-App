@@ -61,7 +61,15 @@ class HomeScreen extends StatelessWidget {
                                   context: context,
                                   isScrollControlled: true,
                                   builder: (context) {
-                                    return AddCategory();
+                                    return SingleChildScrollView(
+                                      child: Container(
+                                        padding: EdgeInsets.only(
+                                            bottom: MediaQuery.of(context)
+                                                .viewInsets
+                                                .bottom),
+                                        child: AddCategory(),
+                                      ),
+                                    );
                                   });
                             },
                             child: Container(

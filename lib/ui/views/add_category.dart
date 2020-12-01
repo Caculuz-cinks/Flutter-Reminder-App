@@ -28,27 +28,23 @@ class AddCategory extends StatelessWidget {
                 SizedBox(
                   height: Config.yMargin(context, 6),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).viewInsets.bottom),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xffFF80CE),
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(8),
-                          ),
+                TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xffFF80CE),
                         ),
-                        filled: true,
-                        hintStyle: TextStyle(
-                          color: Colors.grey[800],
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(8),
                         ),
-                        hintText: 'Enter Category Title',
-                        fillColor: Colors.grey[400]),
-                    cursorColor: Color(0xffFF80CE),
-                  ),
+                      ),
+                      filled: true,
+                      hintStyle: TextStyle(
+                        color: Colors.grey[800],
+                      ),
+                      hintText: 'Enter Category Title',
+                      fillColor: Colors.grey[400]),
+                  cursorColor: Color(0xffFF80CE),
                 ),
                 SizedBox(
                   height: Config.yMargin(context, 1.5),
