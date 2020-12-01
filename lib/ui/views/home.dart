@@ -4,6 +4,7 @@ import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/reusable/category_card.dart';
 import 'package:Todo/ui/reusable/item_card.dart';
 import 'package:Todo/ui/reusable/open_category.dart';
+import 'package:Todo/ui/views/add_category.dart';
 import 'package:Todo/ui/views/category_view.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +55,13 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              showModalBottomSheet(
+                                  context: context,
+                                  builder: (BuildContext ontext) {
+                                    return AddCategory();
+                                  });
+                            },
                             child: Container(
                               height: Config.yMargin(context, 6.5),
                               width: Config.xMargin(context, 12),
