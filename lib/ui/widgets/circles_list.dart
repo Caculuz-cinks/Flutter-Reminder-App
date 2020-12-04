@@ -8,30 +8,19 @@ class CirclesList extends StatefulWidget {
 }
 
 class _CirclesListState extends State<CirclesList> {
-  bool firstBoxSelected = false;
+  bool firstBoxSelected;
 
-  bool secondBoxSelected = false;
+  bool secondBoxSelected;
 
-  bool thirdBoxSelected = false;
+  bool thirdBoxSelected;
 
-  bool fourthBoxSelected = false;
+  bool fourthBoxSelected;
 
-  bool fifthBoxSelected = false;
+  bool fifthBoxSelected;
 
-  bool sixthBoxSelected = false;
-
-  void selection() {
-    if (firstBoxSelected == true) {
-      secondBoxSelected = false;
-
-      thirdBoxSelected = false;
-
-      fourthBoxSelected = false;
-
-      fifthBoxSelected = false;
-
-      sixthBoxSelected = false;
-    } else if (secondBoxSelected == true) {
+  bool sixthBoxSelected;
+  selection1() {
+    if (secondBoxSelected == true) {
       firstBoxSelected = false;
       thirdBoxSelected = false;
 
@@ -40,7 +29,11 @@ class _CirclesListState extends State<CirclesList> {
       fifthBoxSelected = false;
 
       sixthBoxSelected = false;
-    } else if (thirdBoxSelected == true) {
+    }
+  }
+
+  selection2() {
+    if (thirdBoxSelected == true) {
       firstBoxSelected = false;
       secondBoxSelected = false;
 
@@ -49,7 +42,11 @@ class _CirclesListState extends State<CirclesList> {
       fifthBoxSelected = false;
 
       sixthBoxSelected = false;
-    } else if (fourthBoxSelected == true) {
+    }
+  }
+
+  selection3() {
+    if (fourthBoxSelected == true) {
       firstBoxSelected = false;
       secondBoxSelected = false;
 
@@ -58,7 +55,11 @@ class _CirclesListState extends State<CirclesList> {
       fifthBoxSelected = false;
 
       sixthBoxSelected = false;
-    } else if (fifthBoxSelected == true) {
+    }
+  }
+
+  selection4() {
+    if (fifthBoxSelected == true) {
       firstBoxSelected = false;
       secondBoxSelected = false;
 
@@ -67,7 +68,11 @@ class _CirclesListState extends State<CirclesList> {
       fourthBoxSelected = false;
 
       sixthBoxSelected = false;
-    } else if (sixthBoxSelected == true) {
+    }
+  }
+
+  selection5() {
+    if (sixthBoxSelected == true) {
       firstBoxSelected = false;
       secondBoxSelected = false;
 
@@ -79,134 +84,153 @@ class _CirclesListState extends State<CirclesList> {
     }
   }
 
+  selection() {
+    if (firstBoxSelected == true) {
+      secondBoxSelected = false;
+
+      thirdBoxSelected = false;
+
+      fourthBoxSelected = false;
+
+      fifthBoxSelected = false;
+
+      sixthBoxSelected = false;
+    } else
+      return true;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              firstBoxSelected = true;
-            });
-            selection();
-          },
-          child: ColorCircles(
-            firstColor: Color(0xffF7B591),
-            secondColor: Color(0xffE44788),
-            icon: firstBoxSelected == true
-                ? Icon(
-                    Icons.check,
-                    color: Colors.white,
-                  )
-                : Container(),
+    return Container(
+      height: Config.yMargin(context, 10),
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                firstBoxSelected = true;
+                selection();
+              });
+            },
+            child: ColorCircles(
+              firstColor: Color(0xffF7B591),
+              secondColor: Color(0xffE44788),
+              icon: firstBoxSelected == true
+                  ? Icon(
+                      Icons.check,
+                      color: Colors.white,
+                    )
+                  : Container(),
+            ),
           ),
-        ),
-        SizedBox(
-          width: Config.xMargin(context, 6),
-        ),
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              secondBoxSelected = true;
-            });
-            selection();
-          },
-          child: ColorCircles(
-            firstColor: Color(0xff8AF7BB),
-            secondColor: Color(0xff24E395),
-            icon: secondBoxSelected == true
-                ? Icon(
-                    Icons.check,
-                    color: Colors.white,
-                  )
-                : Container(),
+          SizedBox(
+            width: Config.xMargin(context, 6),
           ),
-        ),
-        SizedBox(
-          width: Config.xMargin(context, 6),
-        ),
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              thirdBoxSelected = true;
-            });
-            selection();
-          },
-          child: ColorCircles(
-            firstColor: Color(0xff597CF2),
-            secondColor: Color(0xff7B43F4),
-            icon: thirdBoxSelected == true
-                ? Icon(
-                    Icons.check,
-                    color: Colors.white,
-                  )
-                : Container(),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                secondBoxSelected = true;
+                selection1();
+              });
+            },
+            child: ColorCircles(
+              firstColor: Color(0xff8AF7BB),
+              secondColor: Color(0xff24E395),
+              icon: secondBoxSelected == true
+                  ? Icon(
+                      Icons.check,
+                      color: Colors.white,
+                    )
+                  : Container(),
+            ),
           ),
-        ),
-        SizedBox(
-          width: Config.xMargin(context, 6),
-        ),
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              fourthBoxSelected = true;
-            });
-            selection();
-          },
-          child: ColorCircles(
-            firstColor: Color(0xff597CF2),
-            secondColor: Color(0xff7B43F4),
-            icon: fourthBoxSelected == true
-                ? Icon(
-                    Icons.check,
-                    color: Colors.white,
-                  )
-                : Container(),
+          SizedBox(
+            width: Config.xMargin(context, 6),
           ),
-        ),
-        SizedBox(
-          width: Config.xMargin(context, 6),
-        ),
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              fifthBoxSelected = true;
-            });
-            selection();
-          },
-          child: ColorCircles(
-            firstColor: Color(0xff597CF2),
-            secondColor: Color(0xff7B43F4),
-            icon: fifthBoxSelected == true
-                ? Icon(
-                    Icons.check,
-                    color: Colors.white,
-                  )
-                : Container(),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                thirdBoxSelected = true;
+                selection2();
+              });
+            },
+            child: ColorCircles(
+              firstColor: Color(0xff597CF2),
+              secondColor: Color(0xff7B43F4),
+              icon: thirdBoxSelected == true
+                  ? Icon(
+                      Icons.check,
+                      color: Colors.white,
+                    )
+                  : Container(),
+            ),
           ),
-        ),
-        SizedBox(
-          width: Config.xMargin(context, 6),
-        ),
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              sixthBoxSelected = true;
-            });
-            selection();
-          },
-          child: ColorCircles(
-            firstColor: Color(0xff597CF2),
-            secondColor: Color(0xff7B43F4),
-            icon: sixthBoxSelected == true
-                ? Icon(
-                    Icons.check,
-                    color: Colors.white,
-                  )
-                : Container(),
+          SizedBox(
+            width: Config.xMargin(context, 6),
           ),
-        ),
-      ],
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                fourthBoxSelected = true;
+                selection3();
+              });
+            },
+            child: ColorCircles(
+              firstColor: Color(0xff597CF2),
+              secondColor: Color(0xff7B43F4),
+              icon: fourthBoxSelected == true
+                  ? Icon(
+                      Icons.check,
+                      color: Colors.white,
+                    )
+                  : Container(),
+            ),
+          ),
+          SizedBox(
+            width: Config.xMargin(context, 6),
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                fifthBoxSelected = true;
+                selection4();
+              });
+            },
+            child: ColorCircles(
+              firstColor: Color(0xff597CF2),
+              secondColor: Color(0xff7B43F4),
+              icon: fifthBoxSelected == true
+                  ? Icon(
+                      Icons.check,
+                      color: Colors.white,
+                    )
+                  : Container(),
+            ),
+          ),
+          SizedBox(
+            width: Config.xMargin(context, 6),
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                sixthBoxSelected = true;
+                selection5();
+              });
+            },
+            child: ColorCircles(
+              firstColor: Color(0xff597CF2),
+              secondColor: Color(0xff7B43F4),
+              icon: sixthBoxSelected == true
+                  ? Icon(
+                      Icons.check,
+                      color: Colors.white,
+                    )
+                  : Container(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
