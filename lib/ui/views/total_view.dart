@@ -17,10 +17,14 @@ class TotalView extends StatelessWidget {
             width: widthOfScreen,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                  end: Alignment.bottomRight,
-                  begin: Alignment.topLeft,
-                  stops: [0.1, 1.0],
-                  colors: [AppColors.totalStartColor, AppColors.totalEndColor]),
+                end: Alignment.bottomRight,
+                begin: Alignment.topLeft,
+                stops: [0.1, 1.0],
+                colors: [
+                  AppColors.totalStartColor,
+                  AppColors.totalEndColor,
+                ],
+              ),
             ),
             child: Padding(
               padding:

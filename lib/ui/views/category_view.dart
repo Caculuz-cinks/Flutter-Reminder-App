@@ -1,5 +1,6 @@
 import 'package:Todo/ui/app_colors.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
+import 'package:Todo/ui/views/add_task.dart';
 
 import 'package:Todo/ui/widgets/item_card_list.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +88,22 @@ class CategoryView extends StatelessWidget {
                         ],
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              builder: (context) {
+                                return SingleChildScrollView(
+                                  child: Container(
+                                    padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context)
+                                            .viewInsets
+                                            .bottom),
+                                    child: AddTask(),
+                                  ),
+                                );
+                              });
+                        },
                         child: Container(
                           height: Config.yMargin(context, 6.5),
                           width: Config.xMargin(context, 12),
