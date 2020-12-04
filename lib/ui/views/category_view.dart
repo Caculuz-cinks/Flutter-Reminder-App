@@ -1,7 +1,7 @@
 import 'package:Todo/ui/app_colors.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
-import 'package:Todo/ui/reusable/item_card.dart';
-import 'package:Todo/ui/reusable/item_card_list.dart';
+
+import 'package:Todo/ui/widgets/item_card_list.dart';
 import 'package:flutter/material.dart';
 
 class WorkView extends StatelessWidget {

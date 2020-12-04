@@ -1,9 +1,9 @@
 import 'package:Todo/core/routes/route_names.dart';
 import 'package:Todo/ui/app_colors.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
-import 'package:Todo/ui/reusable/category_card.dart';
-import 'package:Todo/ui/reusable/item_card.dart';
-import 'package:Todo/ui/reusable/open_category.dart';
+import 'package:Todo/ui/widgets/category_card.dart';
+import 'package:Todo/ui/widgets/item_card.dart';
+import 'package:Todo/ui/widgets/open_category.dart';
 import 'package:Todo/ui/views/add_category.dart';
 import 'package:Todo/ui/views/category_view.dart';
 import 'package:flutter/material.dart';

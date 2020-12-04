@@ -1,6 +1,7 @@
 import 'package:Todo/core/routes/route_names.dart';
-import 'package:Todo/ui/reusable/category_card.dart';
+
 import 'package:Todo/ui/views/category_view.dart';
+import 'package:Todo/ui/widgets/category_card.dart';
 import 'package:flutter/material.dart';
 import 'package:Todo/ui/app_colors.dart';
 

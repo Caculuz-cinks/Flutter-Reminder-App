@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ColorCircles extends StatefulWidget {
   final Color firstColor;
   final Color secondColor;
-  final Icon icon;
+  final Widget icon;
   ColorCircles({this.firstColor, this.secondColor, this.icon});
 
   @override

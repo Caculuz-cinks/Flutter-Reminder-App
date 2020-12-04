@@ -1,5 +1,7 @@
 import 'package:Todo/ui/responsiveness/size_config.dart';
-import 'package:Todo/ui/reusable/color_circles.dart';
+import 'package:Todo/ui/widgets/circles_list.dart';
+
+import 'package:Todo/ui/widgets/color_circles.dart';
 import 'package:flutter/material.dart';
 
 class AddCategory extends StatelessWidget {
@@ -59,49 +61,7 @@ class AddCategory extends StatelessWidget {
                 // SizedBox(
                 //   height: Config.yMargin(context, 0.5),
                 // ),
-                Row(
-                  children: [
-                    ColorCircles(
-                      firstColor: Color(0xffF7B591),
-                      secondColor: Color(0xffE44788),
-                    ),
-                    SizedBox(
-                      width: Config.xMargin(context, 6),
-                    ),
-                    ColorCircles(
-                      firstColor: Color(0xff8AF7BB),
-                      secondColor: Color(0xff24E395),
-                    ),
-                    SizedBox(
-                      width: Config.xMargin(context, 6),
-                    ),
-                    ColorCircles(
-                      firstColor: Color(0xff597CF2),
-                      secondColor: Color(0xff7B43F4),
-                    ),
-                    SizedBox(
-                      width: Config.xMargin(context, 6),
-                    ),
-                    ColorCircles(
-                      firstColor: Color(0xff597CF2),
-                      secondColor: Color(0xff7B43F4),
-                    ),
-                    SizedBox(
-                      width: Config.xMargin(context, 6),
-                    ),
-                    ColorCircles(
-                      firstColor: Color(0xff597CF2),
-                      secondColor: Color(0xff7B43F4),
-                    ),
-                    SizedBox(
-                      width: Config.xMargin(context, 6),
-                    ),
-                    ColorCircles(
-                      firstColor: Color(0xff597CF2),
-                      secondColor: Color(0xff7B43F4),
-                    ),
-                  ],
-                ),
+                CirclesList(),
                 SizedBox(
                   height: Config.yMargin(context, 2),
                 ),
