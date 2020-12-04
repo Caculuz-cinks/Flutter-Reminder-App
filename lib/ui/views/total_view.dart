@@ -4,10 +4,7 @@ import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/widgets/item_card_list.dart';
 import 'package:flutter/material.dart';
 
-class CategoryView extends StatelessWidget {
-  CategoryView({this.category});
-  final String category;
-
+class TotalView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var widthOfScreen = MediaQuery.of(context).size.width;
@@ -22,22 +19,8 @@ class CategoryView extends StatelessWidget {
               gradient: LinearGradient(
                   end: Alignment.bottomRight,
                   begin: Alignment.topLeft,
-                  stops: [
-                    0.1,
-                    1.0
-                  ],
-                  colors: [
-                    category == 'WORK'
-                        ? AppColors.workStartColor
-                        : category == 'TOTAL'
-                            ? AppColors.totalStartColor
-                            : AppColors.white,
-                    category == 'WORK'
-                        ? AppColors.workEndColor
-                        : category == 'TOTAL'
-                            ? AppColors.totalEndColor
-                            : AppColors.white,
-                  ]),
+                  stops: [0.1, 1.0],
+                  colors: [AppColors.totalStartColor, AppColors.totalEndColor]),
             ),
             child: Padding(
               padding:
@@ -68,7 +51,7 @@ class CategoryView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            category,
+                            'TOTAL',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: Config.textSize(context, 8),
@@ -86,21 +69,6 @@ class CategoryView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          height: Config.yMargin(context, 6.5),
-                          width: Config.xMargin(context, 12),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Icon(
-                            Icons.add,
-                            size: Config.textSize(context, 8),
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                   SizedBox(
@@ -112,7 +80,7 @@ class CategoryView extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              ' 1\nPM',
+                              '1h',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 30,
@@ -124,8 +92,8 @@ class CategoryView extends StatelessWidget {
                             ),
                             Expanded(
                               child: ItemCardList(
-                                color1: Color(0xff5C77F2).withRed(110),
-                                color2: Color(0xff8B73F5),
+                                color1: Color(0xffFF80CE).withBlue(200),
+                                color2: Color(0xffF7007C).withBlue(150),
                                 location: 'Sillicon Valley',
                                 item: 'Visit Apple and Google',
                               ),
@@ -138,7 +106,7 @@ class CategoryView extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              '10\nAM',
+                              '4h',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 30,
@@ -150,8 +118,8 @@ class CategoryView extends StatelessWidget {
                             ),
                             Expanded(
                               child: ItemCardList(
-                                color1: Color(0xff5C77F2).withRed(110),
-                                color2: Color(0xff8B73F5),
+                                color1: Color(0xffFF80CE).withBlue(200),
+                                color2: Color(0xffF7007C).withBlue(150),
                                 location: 'Sillicon Valley',
                                 item: 'Visit Apple and Google',
                               ),

@@ -103,7 +103,7 @@ class HomeScreen extends StatelessWidget {
                       ItemCard(
                         color1: Color(0xffF4AF8C),
                         color2: Color(0xffE97C6E),
-                        hours: '2h',
+                        hours: '12\nPM',
                         item: 'Go to the grocery',
                         location: 'Mall',
                       ),
@@ -130,9 +130,14 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       width: Config.xMargin(context, 5),
                     ),
-                    OpenCategory(
-                      category: 'TOTAL',
-                      taskCount: '3',
+                    GestureDetector(
+                      onTap: () =>
+                          Navigator.pushNamed(context, RouteNames.total),
+                      child: CategoryCard(
+                          category: 'TOTAL',
+                          taskCount: '2',
+                          startColor: AppColors.totalStartColor,
+                          endColor: AppColors.totalEndColor),
                     ),
                     SizedBox(
                       width: Config.xMargin(context, 3),
