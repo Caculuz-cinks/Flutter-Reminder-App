@@ -1,10 +1,19 @@
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:flutter/material.dart';
 
-class ColorCircles extends StatelessWidget {
+class ColorCircles extends StatefulWidget {
   final Color firstColor;
   final Color secondColor;
-  ColorCircles({this.firstColor, this.secondColor});
+  final Icon icon;
+  ColorCircles({this.firstColor, this.secondColor, this.icon});
+
+  @override
+  _ColorCirclesState createState() => _ColorCirclesState();
+}
+
+class _ColorCirclesState extends State<ColorCircles> {
+  bool onPressed = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,10 +29,11 @@ class ColorCircles extends StatelessWidget {
               1.0
             ],
             colors: [
-              firstColor,
-              secondColor,
+              widget.firstColor,
+              widget.secondColor,
             ]),
       ),
+      child: Center(child: widget.icon),
     );
   }
 }
