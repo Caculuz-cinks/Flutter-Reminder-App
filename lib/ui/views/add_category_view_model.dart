@@ -16,6 +16,6 @@ class AddCategoryViewModel extends ChangeNotifier {
   Color get slectedCardColor => _selectedCardColor;
 
   Categories createCategories() {
-    return Categories(_selectedCardColor, _chosenCategoryName, 1);
+    return Categories(_chosenCategoryName, 1);
   }
 }

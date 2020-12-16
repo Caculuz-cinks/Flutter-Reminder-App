@@ -1,6 +1,6 @@
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/views/add_category_view_model.dart';
-import 'package:Todo/ui/widgets/circles_list.dart';
+import 'package:Todo/ui/views/circles_list.dart';
 
 import 'package:Todo/ui/widgets/color_circles.dart';
 import 'package:flutter/material.dart';
