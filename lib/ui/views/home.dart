@@ -1,18 +1,32 @@
+import 'package:Todo/core/database/categories_database.dart';
 import 'package:Todo/core/routes/route_names.dart';
 import 'package:Todo/ui/app_colors.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
+import 'package:Todo/ui/views/add_category_view_model.dart';
+import 'package:Todo/ui/views/home_view_model.dart';
 import 'package:Todo/ui/widgets/category_card.dart';
 import 'package:Todo/ui/widgets/item_card.dart';
 import 'package:Todo/ui/widgets/open_category.dart';
 import 'package:Todo/ui/views/add_category.dart';
 import 'package:Todo/ui/views/category_view.dart';
+import 'package:Todo/ui/widgets/total_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var category = Provider.of<HomeViewModel>(context, listen: true);
+
+    var categoryData = Provider.of<CategoriesData>(context, listen: true);
+    categoryData.getAllCategories();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      category.updateCategories(categoryData.categories);
+    });
+
     var widthOfScreen = MediaQuery.of(context).size.width;
     var heightOfScreen = MediaQuery.of(context).size.height;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xff2C2F35),
@@ -133,38 +147,18 @@ class HomeScreen extends StatelessWidget {
                     GestureDetector(
                       onTap: () =>
                           Navigator.pushNamed(context, RouteNames.total),
-                      child: CategoryCard(
+                      child: TotalCard(
                           category: 'TOTAL',
                           taskCount: '2',
                           startColor: AppColors.totalStartColor,
                           endColor: AppColors.totalEndColor),
                     ),
-                    SizedBox(
-                      width: Config.xMargin(context, 3),
-                    ),
-                    OpenCategory(
-                      category: 'WORK',
-                      taskCount: '9',
-                    ),
-                    SizedBox(
-                      width: Config.xMargin(context, 3),
-                    ),
-                    CategoryCard(
-                      category: 'SHOPPING',
-                      taskCount: '2',
-                      startColor: Color(0xffF7B591),
-                      endColor: Color(0xffE44788),
-                    ),
-                    SizedBox(
-                      width: Config.xMargin(context, 3),
-                    ),
-                    CategoryCard(
-                      category: 'PERSONAL',
-                      taskCount: '0',
-                      startColor: Color(0xff8AF7BB),
-                      endColor: Color(0xff24E395),
-                    ),
                     SizedBox(width: Config.xMargin(context, 5)),
+                    for (var eachCategory in category.categories)
+                      CategoryCard(
+                        category: eachCategory,
+                        taskCount: '0',
+                      )
                   ],
                 ),
               ),

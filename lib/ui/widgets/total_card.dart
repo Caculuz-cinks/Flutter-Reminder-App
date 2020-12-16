@@ -1,10 +1,12 @@
 import 'package:Todo/core/models/categories_model.dart';
 import 'package:flutter/material.dart';
 
-class CategoryCard extends StatelessWidget {
-  final Categories category;
+class TotalCard extends StatelessWidget {
+  final Color startColor;
+  final Color endColor;
+  final String category;
   final String taskCount;
-  CategoryCard({this.category, this.taskCount});
+  TotalCard({this.startColor, this.endColor, this.category, this.taskCount});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,8 +22,8 @@ class CategoryCard extends StatelessWidget {
               1.0
             ],
             colors: [
-              Color(category.firstSelectedColor),
-              Color(category.secondSelectedColor),
+              startColor,
+              endColor,
             ]),
       ),
       child: Padding(
@@ -30,7 +32,7 @@ class CategoryCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              category.categoryName,
+              category,
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w900,

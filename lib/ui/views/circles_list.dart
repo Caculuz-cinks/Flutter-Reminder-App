@@ -1,7 +1,10 @@
 import 'package:Todo/ui/app_colors.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
+import 'package:Todo/ui/views/add_category_view_model.dart';
+
 import 'package:Todo/ui/widgets/color_circles.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CirclesList extends StatefulWidget {
   @override
@@ -112,11 +115,17 @@ class _CirclesListState extends State<CirclesList> {
               setState(() {
                 firstBoxSelected = true;
                 selection();
+                firstCircleColor1 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor1;
+                firstCircleColor2 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor2;
               });
             },
             child: ColorCircles(
-              firstColor: Color(AppColors.firstCircleColor1),
-              secondColor: Color(AppColors.firstCircleColor2),
+              firstColor: Color(firstCircleColor1),
+              secondColor: Color(firstCircleColor2),
               icon: firstBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -133,11 +142,17 @@ class _CirclesListState extends State<CirclesList> {
               setState(() {
                 secondBoxSelected = true;
                 selection1();
+                secondCircleColor1 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor1;
+                secondCircleColor2 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor2;
               });
             },
             child: ColorCircles(
-              firstColor: Color(AppColors.secondCircleColor1),
-              secondColor: Color(AppColors.secondCircleColor2),
+              firstColor: Color(secondCircleColor1),
+              secondColor: Color(secondCircleColor2),
               icon: secondBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -154,11 +169,17 @@ class _CirclesListState extends State<CirclesList> {
               setState(() {
                 thirdBoxSelected = true;
                 selection2();
+                thirdCircleColor1 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor1;
+                thirdCircleColor2 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor2;
               });
             },
             child: ColorCircles(
-              firstColor: Color(AppColors.thirdCircleColor1),
-              secondColor: Color(AppColors.thirdCircleColor2),
+              firstColor: Color(thirdCircleColor1),
+              secondColor: Color(thirdCircleColor2),
               icon: thirdBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -175,11 +196,17 @@ class _CirclesListState extends State<CirclesList> {
               setState(() {
                 fourthBoxSelected = true;
                 selection3();
+                fourthCircleColor1 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor1;
+                fourthCircleColor2 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor2;
               });
             },
             child: ColorCircles(
-              firstColor: Color(AppColors.fourthCircleColor1),
-              secondColor: Color(AppColors.fourthCircleColor2),
+              firstColor: Color(fourthCircleColor1),
+              secondColor: Color(fourthCircleColor2),
               icon: fourthBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -196,11 +223,17 @@ class _CirclesListState extends State<CirclesList> {
               setState(() {
                 fifthBoxSelected = true;
                 selection4();
+                fifthCircleColor1 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor1;
+                fifthCircleColor2 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor2;
               });
             },
             child: ColorCircles(
-              firstColor: Color(AppColors.fifthCircleColor1),
-              secondColor: Color(AppColors.fifthCircleColor2),
+              firstColor: Color(fifthCircleColor1),
+              secondColor: Color(fifthCircleColor2),
               icon: fifthBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -217,11 +250,17 @@ class _CirclesListState extends State<CirclesList> {
               setState(() {
                 sixthBoxSelected = true;
                 selection5();
+                sixthCircleColor1 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor1;
+                sixthCircleColor2 =
+                    Provider.of<AddCategoryViewModel>(context, listen: false)
+                        .selectedColor2;
               });
             },
             child: ColorCircles(
-              firstColor: Color(AppColors.sixthCircleColor1),
-              secondColor: Color(AppColors.sixthCircleColor2),
+              firstColor: Color(sixthCircleColor1),
+              secondColor: Color(sixthCircleColor2),
               icon: sixthBoxSelected == true
                   ? Icon(
                       Icons.check,

@@ -1,3 +1,4 @@
+import 'package:Todo/core/database/categories_database.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/views/add_category_view_model.dart';
 import 'package:Todo/ui/views/circles_list.dart';
@@ -11,9 +12,9 @@ class AddCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _titleController.text =
-        Provider.of<AddCategoryViewModel>(context, listen: false)
-            .chosenCategoryName;
+    var addCategory = Provider.of<AddCategoryViewModel>(context, listen: true);
+    _titleController.text = addCategory.chosenCategoryName;
+
     final widthOfScreen = MediaQuery.of(context).size.width;
     return Container(
         decoration: BoxDecoration(
@@ -74,35 +75,41 @@ class AddCategory extends StatelessWidget {
                   height: Config.yMargin(context, 2),
                 ),
                 Center(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
+                  child: GestureDetector(
+                    onTap: () {
+                      Provider.of<CategoriesData>(context, listen: true)
+                          .insert(addCategory.createCategories());
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(8),
+                        ),
+                        gradient: LinearGradient(
+                            end: Alignment.bottomRight,
+                            begin: Alignment.topLeft,
+                            stops: [
+                              0.3,
+                              1.0
+                            ],
+                            colors: [
+                              Color(0xffFF80CE),
+                              Color(0xffF7007C),
+                            ]),
                       ),
-                      gradient: LinearGradient(
-                          end: Alignment.bottomRight,
-                          begin: Alignment.topLeft,
-                          stops: [
-                            0.3,
-                            1.0
-                          ],
-                          colors: [
-                            Color(0xffFF80CE),
-                            Color(0xffF7007C),
-                          ]),
-                    ),
-                    height: Config.yMargin(context, 7),
-                    width: Config.xMargin(context, 40),
-                    child: Center(
-                      child: Text(
-                        'Create',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: Config.textSize(
-                              context,
-                              5,
-                            ),
-                            color: Colors.white),
+                      height: Config.yMargin(context, 7),
+                      width: Config.xMargin(context, 40),
+                      child: Center(
+                        child: Text(
+                          'Create',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: Config.textSize(
+                                context,
+                                5,
+                              ),
+                              color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
