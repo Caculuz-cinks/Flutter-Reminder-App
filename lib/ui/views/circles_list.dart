@@ -1,3 +1,4 @@
+import 'package:Todo/ui/app_colors.dart';
 import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:Todo/ui/widgets/color_circles.dart';
 import 'package:flutter/material.dart';
@@ -114,8 +115,8 @@ class _CirclesListState extends State<CirclesList> {
               });
             },
             child: ColorCircles(
-              firstColor: Color(0xffF7B591),
-              secondColor: Color(0xffE44788),
+              firstColor: Color(AppColors.firstCircleColor1),
+              secondColor: Color(AppColors.firstCircleColor2),
               icon: firstBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -135,8 +136,8 @@ class _CirclesListState extends State<CirclesList> {
               });
             },
             child: ColorCircles(
-              firstColor: Color(0xff8AF7BB),
-              secondColor: Color(0xff24E395),
+              firstColor: Color(AppColors.secondCircleColor1),
+              secondColor: Color(AppColors.secondCircleColor2),
               icon: secondBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -156,8 +157,8 @@ class _CirclesListState extends State<CirclesList> {
               });
             },
             child: ColorCircles(
-              firstColor: Color(0xff597CF2),
-              secondColor: Color(0xff7B43F4),
+              firstColor: Color(AppColors.thirdCircleColor1),
+              secondColor: Color(AppColors.thirdCircleColor2),
               icon: thirdBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -177,8 +178,8 @@ class _CirclesListState extends State<CirclesList> {
               });
             },
             child: ColorCircles(
-              firstColor: Color(0xff597CF2),
-              secondColor: Color(0xff7B43F4),
+              firstColor: Color(AppColors.fourthCircleColor1),
+              secondColor: Color(AppColors.fourthCircleColor2),
               icon: fourthBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -198,8 +199,8 @@ class _CirclesListState extends State<CirclesList> {
               });
             },
             child: ColorCircles(
-              firstColor: Color(0xff597CF2),
-              secondColor: Color(0xff7B43F4),
+              firstColor: Color(AppColors.fifthCircleColor1),
+              secondColor: Color(AppColors.fifthCircleColor2),
               icon: fifthBoxSelected == true
                   ? Icon(
                       Icons.check,
@@ -219,8 +220,8 @@ class _CirclesListState extends State<CirclesList> {
               });
             },
             child: ColorCircles(
-              firstColor: Color(0xff597CF2),
-              secondColor: Color(0xff7B43F4),
+              firstColor: Color(AppColors.sixthCircleColor1),
+              secondColor: Color(AppColors.sixthCircleColor2),
               icon: sixthBoxSelected == true
                   ? Icon(
                       Icons.check,
