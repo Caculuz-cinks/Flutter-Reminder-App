@@ -1,12 +1,19 @@
 import 'package:Todo/ui/responsiveness/size_config.dart';
+import 'package:Todo/ui/views/add_category_view_model.dart';
 import 'package:Todo/ui/widgets/circles_list.dart';
 
 import 'package:Todo/ui/widgets/color_circles.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AddCategory extends StatelessWidget {
+  TextEditingController _titleController;
+
   @override
   Widget build(BuildContext context) {
+    _titleController.text =
+        Provider.of<AddCategoryViewModel>(context, listen: false)
+            .chosenCategoryName;
     final widthOfScreen = MediaQuery.of(context).size.width;
     return Container(
         decoration: BoxDecoration(
@@ -47,6 +54,7 @@ class AddCategory extends StatelessWidget {
                       hintText: 'Enter Category Title',
                       fillColor: Colors.grey[400]),
                   cursorColor: Color(0xffFF80CE),
+                  controller: _titleController,
                 ),
                 SizedBox(
                   height: Config.yMargin(context, 1.5),
