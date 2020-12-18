@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AddCategory extends StatelessWidget {
-  TextEditingController _titleController;
+  final TextEditingController _titleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     var addCategory = Provider.of<AddCategoryViewModel>(context, listen: true);
-    _titleController.text = addCategory.chosenCategoryName;
+    var categoryDb = Provider.of<CategoriesData>(context, listen: true);
 
     final widthOfScreen = MediaQuery.of(context).size.width;
     return Container(
@@ -76,10 +76,19 @@ class AddCategory extends StatelessWidget {
                 ),
                 Center(
                   child: GestureDetector(
-                    onTap: () {
-                      Provider.of<CategoriesData>(context, listen: true)
-                          .insert(addCategory.createCategories());
-                    },
+                    onTap: addCategory.selectedCategoryName != null
+                        ? () async {
+                            addCategory
+                                .setChosenCategoryName(_titleController.text);
+                            print(addCategory.selectedCategoryName);
+                            print(addCategory.selectedFirstColor);
+                            print(addCategory.selectedSecondColor);
+
+                            await categoryDb
+                                .insert(addCategory.createCategories());
+                            Navigator.pop(context);
+                          }
+                        : null,
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(

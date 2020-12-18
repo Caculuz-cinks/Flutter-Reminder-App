@@ -16,6 +16,7 @@ class CategoriesData extends ChangeNotifier {
   Future<Database> get database async {
     if (_database != null) return _database;
     _database = await initDB();
+    return _database;
   }
 
   initDB() async {
@@ -23,30 +24,26 @@ class CategoriesData extends ChangeNotifier {
     String path = join(documentsDirectory.path, "CategoriesDB.db");
     return openDatabase(path, version: 1, onOpen: (db) {},
         onCreate: (Database db, int version) async {
-      await db.execute("CREATE TABLE PRODUCT("
-          "id INTEGER PRIMARY KEY,"
-          "categoryName TEXT,"
-          "firstSelectedColor INTEGER,"
-          "secondSelectedColor INTEGER,"
-          ")");
+      await db.execute(
+          "CREATE TABLE CATEGORIES(id INTEGER PRIMARY KEY,categoryName TEXT, firstSelectedColor TEXT,secondSelectedColor TEXT)");
     });
   }
 
   Future<void> insert(Categories categories) async {
     final db = await database;
-    var maxIdResult = await db
-        .rawQuery("SELECT MAX(id)+1 as last_inserted_id FROM Categories");
-    var id = maxIdResult.first["last_inserted_id"];
+
     var result = await db.rawInsert(
-        "INSERT Into Categories(id, categoryName, firstSelectedColor, secondSelectedColor  )"
+        "INSERT Into Categories(id, categoryName, firstSelectedColor, secondSelectedColor)"
         "VALUES(?,?,?,?)",
         [
-          id,
+          categories.id,
           categories.categoryName,
           categories.firstSelectedColor,
           categories.secondSelectedColor,
         ]);
+    print('data was added sucessfully');
     notifyListeners();
+
     return result;
   }
 
@@ -54,12 +51,15 @@ class CategoriesData extends ChangeNotifier {
     final db = await database;
     List<Map> results = await db.query("Categories",
         columns: Categories.columns, orderBy: "id ASC");
-    _categories = new List();
+
     results.forEach((result) {
       Categories category = Categories.fromMap(result);
       _categories.add(category);
     });
+    print('I got here');
     notifyListeners();
+
+    // print(_categories);
     return _categories;
   }
 }

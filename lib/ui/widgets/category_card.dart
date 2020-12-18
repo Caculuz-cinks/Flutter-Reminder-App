@@ -20,8 +20,8 @@ class CategoryCard extends StatelessWidget {
               1.0
             ],
             colors: [
-              Color(category.firstSelectedColor),
-              Color(category.secondSelectedColor),
+              Color(int.tryParse(category.firstSelectedColor)),
+              Color(int.tryParse(category.secondSelectedColor)),
             ]),
       ),
       child: Padding(

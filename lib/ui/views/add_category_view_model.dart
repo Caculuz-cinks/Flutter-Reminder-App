@@ -6,18 +6,31 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AddCategoryViewModel extends ChangeNotifier {
   String _chosenCategoryName;
-  int _firstselectedColor;
-  int _secondselectedColor;
+  String _firstselectedColor;
+  String _secondselectedColor;
   int color1;
   int color2;
+  int idIncrement;
 
   AddCategoryViewModel() {
     this._chosenCategoryName = '';
+    this.idIncrement = 0;
+  }
+  int increment() {
+    return idIncrement++;
   }
 
-  String get chosenCategoryName => _chosenCategoryName;
-  int get selectedColor1 => _firstselectedColor;
-  int get selectedColor2 => _secondselectedColor;
+  String get selectedCategoryName => _chosenCategoryName;
+  String get selectedFirstColor => _firstselectedColor;
+  String get selectedSecondColor => _secondselectedColor;
+
+  setChosenCategoryName(String chosenCategory) =>
+      _chosenCategoryName = chosenCategory;
+
+  setSelectedColor1(String selectedColor) =>
+      _firstselectedColor = selectedColor;
+  setSelectedColor2(String selectedColor) =>
+      _secondselectedColor = selectedColor;
 
   // Future<void> saveColor() async {
   //   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -32,11 +45,12 @@ class AddCategoryViewModel extends ChangeNotifier {
   // }
 
   Categories createCategories() {
-    return Categories(
+    Categories newCategories = Categories(
+      increment(),
       _chosenCategoryName,
-      1,
       _firstselectedColor,
       _secondselectedColor,
     );
+    return newCategories;
   }
 }

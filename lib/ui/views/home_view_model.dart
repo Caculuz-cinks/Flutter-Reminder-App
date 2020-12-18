@@ -6,6 +6,7 @@ class HomeViewModel extends ChangeNotifier {
 
   void updateCategories(List<Categories> categories) {
     _allCategories = categories;
+    print('I also got here');
     notifyListeners();
   }
 

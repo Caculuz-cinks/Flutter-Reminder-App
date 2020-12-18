@@ -6,19 +6,17 @@ class AppColors {
   static const totalStartColor = Color(0xffFF80CE);
   static const totalEndColor = Color(0xffF7007C);
   static const white = Color(0xffffffff);
-
-  
 }
 
-  int firstCircleColor1 = 0xffF7B591;
-   int firstCircleColor2 = 0xffE44788;
-  int secondCircleColor1 = 0xff8AF7BB;
-  int secondCircleColor2 = 0xff24E395;
-  int thirdCircleColor1 = 0xff597CF2;
-  int thirdCircleColor2 = 0xff7B43F4;
-  int fourthCircleColor1 = 0xff597CF2;
-  int fourthCircleColor2 = 0xff7B43F4;
-  int fifthCircleColor1 = 0xff597CF2;
-  int fifthCircleColor2 = 0xff7B43F4;
-  int sixthCircleColor1 = 0xff597CF2;
-  int sixthCircleColor2 = 0xff7B43F4;
+String firstCircleColor1 = '0xffF7B591';
+String firstCircleColor2 = '0xffE44788';
+String secondCircleColor1 = '0xff8AF7BB';
+String secondCircleColor2 = '0xff24E395';
+String thirdCircleColor1 = '0xff597CF2';
+String thirdCircleColor2 = '0xff7B43F4';
+String fourthCircleColor1 = '0xff597CF2';
+String fourthCircleColor2 = '0xff7B43F4';
+String fifthCircleColor1 = '0xff597CF2';
+String fifthCircleColor2 = '0xff7B43F4';
+String sixthCircleColor1 = '0xff597CF2';
+String sixthCircleColor2 = '0xff7B43F4';
