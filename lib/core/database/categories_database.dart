@@ -31,12 +31,15 @@ class CategoriesData extends ChangeNotifier {
 
   Future<void> insert(Categories categories) async {
     final db = await database;
+    var maxIdResult = await db
+        .rawQuery("SELECT MAX(id)+1 as last_inserted_id FROM Categories");
 
+    var id = maxIdResult.first["last_inserted_id"];
     var result = await db.rawInsert(
         "INSERT Into Categories(id, categoryName, firstSelectedColor, secondSelectedColor)"
         "VALUES(?,?,?,?)",
         [
-          categories.id,
+          id,
           categories.categoryName,
           categories.firstSelectedColor,
           categories.secondSelectedColor,

@@ -46,7 +46,7 @@ class AddCategoryViewModel extends ChangeNotifier {
 
   Categories createCategories() {
     Categories newCategories = Categories(
-      increment(),
+      1,
       _chosenCategoryName,
       _firstselectedColor,
       _secondselectedColor,
