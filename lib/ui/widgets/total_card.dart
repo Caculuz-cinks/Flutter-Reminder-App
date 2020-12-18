@@ -1,4 +1,5 @@
 import 'package:Todo/core/models/categories_model.dart';
+import 'package:Todo/ui/responsiveness/size_config.dart';
 import 'package:flutter/material.dart';
 
 class TotalCard extends StatelessWidget {
@@ -10,8 +11,8 @@ class TotalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
-      width: 200,
+      height: Config.yMargin(context, 30),
+      width: Config.xMargin(context, 50),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7),
         gradient: LinearGradient(

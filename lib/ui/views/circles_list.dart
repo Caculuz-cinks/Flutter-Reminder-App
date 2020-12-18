@@ -118,7 +118,7 @@ class _CirclesListState extends State<CirclesList> {
                 selection();
               });
               addCategory.setSelectedColor1(firstCircleColor1);
-              addCategory.setSelectedColor1(firstCircleColor2);
+              addCategory.setSelectedColor2(firstCircleColor2);
             },
             child: ColorCircles(
               firstColor: Color(int.tryParse(firstCircleColor1)),
@@ -141,7 +141,7 @@ class _CirclesListState extends State<CirclesList> {
                 selection1();
               });
               addCategory.setSelectedColor1(secondCircleColor1);
-              addCategory.setSelectedColor1(secondCircleColor2);
+              addCategory.setSelectedColor2(secondCircleColor2);
             },
             child: ColorCircles(
               firstColor: Color(int.tryParse(secondCircleColor1)),
@@ -164,7 +164,7 @@ class _CirclesListState extends State<CirclesList> {
                 selection2();
               });
               addCategory.setSelectedColor1(thirdCircleColor1);
-              addCategory.setSelectedColor1(thirdCircleColor2);
+              addCategory.setSelectedColor2(thirdCircleColor2);
             },
             child: ColorCircles(
               firstColor: Color(int.tryParse(thirdCircleColor1)),
@@ -187,7 +187,7 @@ class _CirclesListState extends State<CirclesList> {
                 selection3();
               });
               addCategory.setSelectedColor1(fourthCircleColor1);
-              addCategory.setSelectedColor1(fourthCircleColor2);
+              addCategory.setSelectedColor2(fourthCircleColor2);
             },
             child: ColorCircles(
               firstColor: Color(int.tryParse(fourthCircleColor1)),
@@ -210,7 +210,7 @@ class _CirclesListState extends State<CirclesList> {
                 selection4();
               });
               addCategory.setSelectedColor1(fifthCircleColor1);
-              addCategory.setSelectedColor1(fifthCircleColor2);
+              addCategory.setSelectedColor2(fifthCircleColor2);
             },
             child: ColorCircles(
               firstColor: Color(int.tryParse(fifthCircleColor1)),
@@ -233,7 +233,7 @@ class _CirclesListState extends State<CirclesList> {
                 selection5();
               });
               addCategory.setSelectedColor1(sixthCircleColor1);
-              addCategory.setSelectedColor1(sixthCircleColor2);
+              addCategory.setSelectedColor2(sixthCircleColor2);
             },
             child: ColorCircles(
               firstColor: Color(int.tryParse(sixthCircleColor1)),

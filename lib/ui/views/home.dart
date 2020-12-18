@@ -153,12 +153,50 @@ class HomeScreen extends StatelessWidget {
                           startColor: AppColors.totalStartColor,
                           endColor: AppColors.totalEndColor),
                     ),
-                    SizedBox(width: Config.xMargin(context, 5)),
+                    SizedBox(
+                      width: Config.xMargin(context, 5),
+                    ),
                     for (var eachCategory in category.categories)
                       CategoryCard(
                         category: eachCategory,
                         taskCount: '0',
-                      )
+                      ),
+                    Ink(
+                      color: Colors.white,
+                      child: InkWell(
+                        onTap: () {
+                          showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              builder: (context) {
+                                return SingleChildScrollView(
+                                  child: Container(
+                                    padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context)
+                                            .viewInsets
+                                            .bottom),
+                                    child: AddCategory(),
+                                  ),
+                                );
+                              });
+                        },
+                        child: Container(
+                          height: Config.yMargin(context, 30),
+                          width: Config.xMargin(context, 50),
+                          decoration: BoxDecoration(
+                            color: Color(0xffffffff).withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          child: Center(
+                            child: Icon(
+                              Icons.add,
+                              size: Config.textSize(context, 15),
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
