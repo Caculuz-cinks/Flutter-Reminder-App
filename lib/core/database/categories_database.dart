@@ -25,21 +25,21 @@ class CategoriesData extends ChangeNotifier {
     return openDatabase(path, version: 1, onOpen: (db) {},
         onCreate: (Database db, int version) async {
       await db.execute(
-          "CREATE TABLE CATEGORIES(id INTEGER PRIMARY KEY,categoryName TEXT, firstSelectedColor TEXT,secondSelectedColor TEXT)");
+          "CREATE TABLE CATEGORIES(id INTEGER PRIMARY KEY AUTOINCREMENT,categoryName TEXT, firstSelectedColor TEXT,secondSelectedColor TEXT)");
     });
   }
 
   Future<void> insert(Categories categories) async {
     final db = await database;
-    var maxIdResult = await db
-        .rawQuery("SELECT MAX(id)+1 as last_inserted_id FROM Categories");
+    // var maxIdResult = await db
+    //     .rawQuery("SELECT MAX(id)+1 as last_inserted_id FROM Categories");
 
-    var id = maxIdResult.first["last_inserted_id"];
+    // var id = maxIdResult.first["last_inserted_id"];
     var result = await db.rawInsert(
         "INSERT Into Categories(id, categoryName, firstSelectedColor, secondSelectedColor)"
         "VALUES(?,?,?,?)",
         [
-          id,
+          categories.id,
           categories.categoryName,
           categories.firstSelectedColor,
           categories.secondSelectedColor,

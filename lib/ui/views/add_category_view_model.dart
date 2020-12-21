@@ -8,8 +8,7 @@ class AddCategoryViewModel extends ChangeNotifier {
   String _chosenCategoryName;
   String _firstselectedColor;
   String _secondselectedColor;
-  int color1;
-  int color2;
+
   int idIncrement;
 
   AddCategoryViewModel() {
@@ -46,7 +45,7 @@ class AddCategoryViewModel extends ChangeNotifier {
 
   Categories createCategories() {
     Categories newCategories = Categories(
-      1,
+      null,
       _chosenCategoryName,
       _firstselectedColor,
       _secondselectedColor,
