@@ -21,9 +21,10 @@ class HomeScreen extends StatelessWidget {
     var categoryData = Provider.of<CategoriesData>(context, listen: true);
 
     categoryData.getAllCategories();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      category.updateCategories(categoryData.categories);
-    });
+    category.updateCategories(categoryData.categories);
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+
+    // });
 
     var widthOfScreen = MediaQuery.of(context).size.width;
     var heightOfScreen = MediaQuery.of(context).size.height;
@@ -139,63 +140,65 @@ class HomeScreen extends StatelessWidget {
               ),
               Container(
                 height: 250,
-                child: ListView(
+                child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    SizedBox(
-                      width: Config.xMargin(context, 5),
-                    ),
-                    GestureDetector(
-                      onTap: () =>
-                          Navigator.pushNamed(context, RouteNames.total),
-                      child: TotalCard(
-                          category: 'TOTAL',
-                          taskCount: '2',
-                          startColor: AppColors.totalStartColor,
-                          endColor: AppColors.totalEndColor),
-                    ),
-                    SizedBox(
-                      width: Config.xMargin(context, 5),
-                    ),
-                    for (var eachCategory in category.categories)
-                      CategoryCard(
-                        category: eachCategory,
-                        taskCount: '0',
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: Config.xMargin(context, 5),
                       ),
-                    InkWell(
-                      onTap: () {
-                        showModalBottomSheet(
-                            context: context,
-                            isScrollControlled: true,
-                            builder: (context) {
-                              return SingleChildScrollView(
-                                child: Container(
-                                  padding: EdgeInsets.only(
-                                      bottom: MediaQuery.of(context)
-                                          .viewInsets
-                                          .bottom),
-                                  child: AddCategory(),
-                                ),
-                              );
-                            });
-                      },
-                      child: Container(
-                        height: Config.yMargin(context, 30),
-                        width: Config.xMargin(context, 50),
-                        decoration: BoxDecoration(
-                          color: Color(0xffffffff).withOpacity(0.8),
-                          borderRadius: BorderRadius.circular(7),
+                      GestureDetector(
+                        onTap: () =>
+                            Navigator.pushNamed(context, RouteNames.total),
+                        child: TotalCard(
+                            category: 'TOTAL',
+                            taskCount: '2',
+                            startColor: AppColors.totalStartColor,
+                            endColor: AppColors.totalEndColor),
+                      ),
+                      SizedBox(
+                        width: Config.xMargin(context, 5),
+                      ),
+                      for (var eachCategory in category.categories)
+                        CategoryCard(
+                          category: eachCategory,
+                          taskCount: '0',
                         ),
-                        child: Center(
-                          child: Icon(
-                            Icons.add,
-                            size: Config.textSize(context, 15),
-                            color: Colors.black,
+                      InkWell(
+                        onTap: () {
+                          showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              builder: (context) {
+                                return SingleChildScrollView(
+                                  child: Container(
+                                    padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context)
+                                            .viewInsets
+                                            .bottom),
+                                    child: AddCategory(),
+                                  ),
+                                );
+                              });
+                        },
+                        child: Container(
+                          height: Config.yMargin(context, 30),
+                          width: Config.xMargin(context, 50),
+                          decoration: BoxDecoration(
+                            color: Color(0xffffffff).withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(7),
+                          ),
+                          child: Center(
+                            child: Icon(
+                              Icons.add,
+                              size: Config.textSize(context, 15),
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               SizedBox(

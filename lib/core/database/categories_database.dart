@@ -35,6 +35,7 @@ class CategoriesData extends ChangeNotifier {
     //     .rawQuery("SELECT MAX(id)+1 as last_inserted_id FROM Categories");
 
     // var id = maxIdResult.first["last_inserted_id"];
+
     var result = await db.rawInsert(
         "INSERT Into Categories(id, categoryName, firstSelectedColor, secondSelectedColor)"
         "VALUES(?,?,?,?)",
@@ -61,7 +62,6 @@ class CategoriesData extends ChangeNotifier {
     });
     print('I got here');
     notifyListeners();
-
     // print(_categories);
     return _categories;
   }
